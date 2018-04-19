@@ -1,0 +1,36 @@
+@import ("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+body,
+html {
+  background: #54afd6;
+}
+.far {
+  display: inline-block;
+  font-family: "FontAwesome";
+}
+.shadow {
+  box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.5);
+}
+.loader {
+  color: #fff;
+  font-size: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -20px 0 0 -20px;
+}
+#login-page form {
+  background: #edfcff;
+  padding: 20px;
+  box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.5);
+}
+#login-page form a {
+  display: inline-block;
+  margin-top: 10px;
+  line-height: 40px;
+}
+#login-page form a .far {
+  float: left;
+  font-size: 30px;
+  margin-top: -2px;
+  margin-right: 10px;
+}

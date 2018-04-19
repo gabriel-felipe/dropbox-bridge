@@ -1,0 +1,12 @@
+{
+  "login-url" : {
+    "get": {"controller":"auth","action":"loginUrl"}
+  },
+  "account" : {
+    "get": {"controller":"auth","action":"currentAccount"}
+  },
+  "folders/list" : {
+    "get": {"controller":"folder","action":"list"}
+  }
+
+}

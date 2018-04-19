@@ -1,0 +1,20 @@
+<script type="text/x-template" id="select-folder-template">
+  <div id="dropbox-page">
+    <loader v-if="!ready"></loader>
+    <div v-if="ready" class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-auto col-sm-12">
+          <form action="">
+            <h2>Welcome {{user.name}}</h2>
+            <p>Select the folder you want to integrate.</p>
+            <ul>
+              <li v-for="folder in folders">
+                {{folder.path}}
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>

@@ -1,0 +1,24 @@
+{
+  "name": "dropbox-integration",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "author": "Gabriel Felipe",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "font-awesome": "^4.7.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.2.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "vue": "^2.5.16",
+    "vue-resource": "^1.5.0",
+    "vue-router": "^3.0.1"
+  }
+}

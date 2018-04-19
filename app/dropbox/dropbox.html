@@ -1,0 +1,15 @@
+<script type="text/x-template" id="dropbox-template">
+  <div id="dropbox-page">
+    <loader v-if="!ready"></loader>
+    <div v-if="ready" class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-auto col-sm-12">
+          <form action="">
+            <h2>Welcome {{user.name}}</h2>
+            <p>Integrate and consume Dropbox API</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>

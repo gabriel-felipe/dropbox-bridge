@@ -1,4 +1,4 @@
-What am I building:
+#What am I building:
 I'm building a software that can be used as a bridge between Dropbox and other web software.
 The basic use flow is:
 1) User sing in with his Dropbox account.
@@ -9,20 +9,20 @@ The basic use flow is:
 6) Whenever a new file is added to the synced folder the software makes a post request to the url saved, with information about the new file, and it's download link, so the other software can interact with this file.
 7) If I have enough time, I would like to build filters like: only watch the files with this or that extension, and so on.
 
-0:30:
+#### 0:30:
   Reading docs and thinking about what to build.
-----
-1:30:
+
+#### 1:30:
   Finished the "framework" aka project structure.
   Downloaded dependencies (npm and composer)
   Configured grunt
   Implemented auto-loaders and simple router (VERY BASIC, only enough to make this app).
------
-2:00:
+
+#### 2:00:
   Created the Dropbox account and app.
   Authorization process is done
------
-4:00:
+
+#### 4:00:
   Studied the docs of the Dropbox api and SDK.
   Started HTML and CSS
   Improved login screen

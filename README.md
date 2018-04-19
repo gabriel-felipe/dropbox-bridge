@@ -1,4 +1,4 @@
-# What am I building:
+# What I'm building:
 I'm building a software that can be used as a bridge between Dropbox and other web software.
 The basic use flow is:
 1) User sing in with his Dropbox account.

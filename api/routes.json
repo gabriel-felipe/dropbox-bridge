@@ -7,6 +7,16 @@
   },
   "folders/list" : {
     "get": {"controller":"folder","action":"list"}
+  },
+  "folders" : {
+    "post": {"controller":"folder","action":"update"}
+  },
+  "file/status" : {
+    "get": {"controller":"file","action":"status"}
+  },
+  "url/new-file-callback" : {
+    "post": {"controller":"url", "action":"fileCallback"},
+    "get": {"controller":"url", "action":"fileCallback"}
   }
 
 }

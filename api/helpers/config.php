@@ -7,11 +7,17 @@ class Config
   protected $data = [];
   public function __construct($file)
   {
+      $this->load($file);
+  }
+
+  public function load($file)
+  {
       if (file_exists($file)) {
           $this->configFile = $file;
           $data = json_decode(file_get_contents($file),true);
           if (is_array($data)) {
             $this->setData($data);
+            return $this;
           } else {
             throw new \Exception("Config constructor expects a json file. \"$file\" given.", 1);
           }

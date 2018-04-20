@@ -12,6 +12,16 @@ use EntermotionTrial\Helpers\Registry;
 $config = new Config("config.json");
 Registry::set("config",$config);
 
+$documentRoot = str_replace("/",DIRECTORY_SEPARATOR,$_SERVER['CONTEXT_DOCUMENT_ROOT']);
+$urlBase = str_replace($documentRoot, "",dirname(__FILE__)."/../");
+$urlBase = "http://".$_SERVER["SERVER_NAME"].$_SERVER["CONTEXT_PREFIX"].$urlBase;
+if ($config->urlBase  !== $urlBase) {
+    $config->urlBase = $urlBase;
+    $config->save();
+}
+
+$syncDir = realpath(__DIR__."/../synced");
+$config->syncDir = $syncDir;
 
 $token = $config->token;
 $clientId = $config->clientId;

@@ -8,35 +8,83 @@
   <div id="dropbox-page">
     <loader v-if="!ready"></loader>
     <div v-if="ready" class="container-fluid">
+      <div class="row justify-content-center header">
+        <div class="col-md-8 col-sm-12">
+          <h2>Welcome {{user.name}}
+            <small>Listing files of the folder: <strong> {{this.folder}} </strong></small>
+
+          </h2>
+
+        </div>
+      </div>
       <div class="row justify-content-center">
-        <div class="col-md-auto col-sm-12">
-          <form action="">
-            <h2>Welcome {{user.name}}</h2>
-            <p>Integrate and consume Dropbox API</p>
-          </form>
+        <div class="col-md-6 col-sm-12">
+
+            <div class="files">
+              <file v-for="(file, id) in files" :path="file.path" :id="file.id"></file>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-12">
+            <router-link class="btn btn-lg btn-primary" to="select-folder">Change folder</router-link>
+
+            <div class="box clearfix">
+                <h3>Every time a new file is found, send a request to: </h3>
+                <input type="url" ref="inputUrl" v-model="newFileCallbackUrl" class="form-control" required="required">
+                <span class="error" v-if="urlError">{{urlError}}</span>
+                <button class="btn btn-sm btn-success btn-save-url" @click="saveUrl">
+                  <span class="far fa-spinner fa-spin" v-if="savingUrl"></span>
+                  <span class="far fa-check" v-if="urlSaved"></span>
+                   Save</button>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </script>
 
+<script type="text/x-template" id="file-template">
+  <div class="file">
+    <a :href="link" class="path-holder clearfix" download target="_blank">
+      <span class="path">{{path}}</span>
+      <span class="progress">
+        <div class="progress-bar" role="progressbar" :style="'width: '+progress+'%'" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100"></div>
+      </span>
+    </a>
+  </div>
+</script>
+
 <script type="text/x-template" id="select-folder-template">
-  <div id="dropbox-page">
-    <loader v-if="!ready"></loader>
-    <div v-if="ready" class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-md-auto col-sm-12">
-          <form action="">
-            <h2>Welcome {{user.name}}</h2>
-            <p>Select the folder you want to integrate.</p>
-            <ul>
-              <li v-for="folder in folders">
-                {{folder.path}}
-              </li>
-            </ul>
-          </form>
+  <div class="select-folder">
+    <div class="container-fluid">
+      <div class="row justify-content-center header">
+        <div class="col-md-5 col-sm-12">
+          <h2>Welcome {{user.name}}
+            <small>Select the folder you want to integrate</small>
+          </h2>
+
         </div>
       </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5 col-sm-12">
+          <div class="folders main-list">
+            <folder path="/" :selected-folder="selectedFolder" @selected="setSelected"/>
+          </div>
+          <button class="btn btn-success btn-confirm-folder" v-if="selectedFolder" @click="confirm"> <span v-if="saving" class="far fa-spin fa-spinner"></span> Confirm folder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="text/x-template" id="folder-template">
+  <div class="folder">
+    <div class="path-holder clearfix">
+      <span class="far toggle-show-childs" v-if="folders.length" v-bind:class="{'fa-caret-right': !showChilds, 'fa-caret-down': showChilds}" @click="toggle"></span>
+      <button class="check" @click="select"><span class="far fa-check" v-if="selected"></span></button>
+      <span class="path">{{path}}</span>
+    </div>
+    <div class="folders" v-if="showChilds">
+      <folder v-for="folder in folders" :path="folder.path" :key="folder.path" :selected-folder="selectedFolder" @selected="emitSelected"></folder>
     </div>
   </div>
 </script>

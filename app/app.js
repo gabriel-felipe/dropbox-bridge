@@ -25,6 +25,27 @@ var app = new Vue({
       name: null
     }
   },
+  created: function(){
+      var accountEndpoint = apiEndPoint+"/account";
+      var options = {
+        url: accountEndpoint,
+        method: 'GET'
+      };
+      this.$http(options).then(function(response){
+        var _self = this;
+        window.setTimeout(function(){
+          _self.updateFiles();
+        },5000);
+        if (response.status === 200) {
+          if (response.body.authenticated) {
+            var user = response.body.user;
+            this.updateUser(user);
+          } else {
+            this.$router.push("/");
+          }
+        }
+      });
+  },
   methods: {
     updateUser: function(user){
       console.log(user);

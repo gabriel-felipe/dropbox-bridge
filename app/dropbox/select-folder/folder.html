@@ -1,0 +1,12 @@
+<script type="text/x-template" id="folder-template">
+  <div class="folder">
+    <div class="path-holder clearfix">
+      <span class="far toggle-show-childs" v-if="folders.length" v-bind:class="{'fa-caret-right': !showChilds, 'fa-caret-down': showChilds}" @click="toggle"></span>
+      <button class="check" @click="select"><span class="far fa-check" v-if="selected"></span></button>
+      <span class="path">{{path}}</span>
+    </div>
+    <div class="folders" v-if="showChilds">
+      <folder v-for="folder in folders" :path="folder.path" :key="folder.path" :selected-folder="selectedFolder" @selected="emitSelected"></folder>
+    </div>
+  </div>
+</script>

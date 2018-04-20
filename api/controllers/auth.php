@@ -34,12 +34,37 @@ class Auth
       $dropbox = Registry::get("dropbox");
       $authenticated = false;
       $user = [];
+      $files = [];
+      $folder = $config->folder;
       if ($dropbox->getAccessToken()) {
         try {
 
            $account = $dropbox->getCurrentAccount();
            $account = $account->getData();
            $user['name'] = $account['name']['display_name'];
+           if ($folder) {
+             try {
+               $listFolderContents = $dropbox->listFolder($folder);
+               //Fetch Items (Returns an instance of ModelCollection)
+               $items = $listFolderContents->getItems();
+
+               //All Items
+               $items->all();
+
+               $subFolders = [];
+               foreach($items as $item){
+                   $type = $item->getDataProperty('.tag');
+                   if ($type === "file") {
+
+                       $files[] = [
+                         "path"=>(string)$item->getDataProperty("path_display"),
+                         "id"=>$item->getDataProperty("id")
+                       ];
+                   }
+               }
+             } catch (\Exception $e)
+             {}
+           }
            $authenticated = true;
         } catch (\Exception $e) {
            // Do nothing token is expired and user not authenticated
@@ -47,6 +72,6 @@ class Auth
       }
 
 
-      return json_encode(["user"=>$user,"authenticated"=>$authenticated,"folder"=>$config->folder]);
+      return json_encode(["user"=>$user,"authenticated"=>$authenticated,"folder"=>$folder,"files"=>$files,"newFileCallbackUrl"=>$config->newFileCallbackUrl]);
   }
 }

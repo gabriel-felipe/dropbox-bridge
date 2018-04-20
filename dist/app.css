@@ -3,7 +3,8 @@ body,
 html {
   background: #54afd6;
 }
-.far {
+.far,
+.fas {
   display: inline-block;
   font-family: "FontAwesome";
 }
@@ -18,7 +19,139 @@ html {
   left: 50%;
   margin: -20px 0 0 -20px;
 }
+.header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.header h2 {
+  color: #fff;
+  border-left: 2px solid #fff;
+  padding-left: 14px;
+}
+.header h2 small {
+  margin-top: 5px;
+  display: block;
+  font-size: 16px;
+  color: #f5f5f5;
+}
+.header h2 small strong {
+  font-weight: 700;
+  color: #fff;
+}
+.box {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.5);
+}
+.box h3 {
+  font-size: 14px;
+}
+.btn-save-url {
+  float: right;
+  margin: 10px 0;
+}
+span.error {
+  color: var(--danger);
+  display: block;
+  float: left;
+  font-size: 12px;
+  margin: 5px 0;
+}
+.folders .folder .far,
+.files .folder .far,
+.folders .file .far,
+.files .file .far {
+  cursor: pointer;
+}
+.folders .folder .path-holder,
+.files .folder .path-holder,
+.folders .file .path-holder,
+.files .file .path-holder {
+  position: relative;
+  background: #fff;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+.folders .folder .path-holder .toggle-show-childs,
+.files .folder .path-holder .toggle-show-childs,
+.folders .file .path-holder .toggle-show-childs,
+.files .file .path-holder .toggle-show-childs {
+  position: absolute;
+  left: -20px;
+  font-size: 22px;
+  top: 0;
+  color: #40576e;
+}
+.folders .folder .path-holder .check,
+.files .folder .path-holder .check,
+.folders .file .path-holder .check,
+.files .file .path-holder .check {
+  float: left;
+  width: 25px;
+  height: 25px;
+  display: block;
+  background: #fafafa;
+  border: 1px solid var(--gray);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+.folders .folder .path-holder .check:focus,
+.files .folder .path-holder .check:focus,
+.folders .file .path-holder .check:focus,
+.files .file .path-holder .check:focus,
+.folders .folder .path-holder .check:active,
+.files .folder .path-holder .check:active,
+.folders .file .path-holder .check:active,
+.files .file .path-holder .check:active {
+  outline: none;
+}
+.folders .folder .path-holder .check span,
+.files .folder .path-holder .check span,
+.folders .file .path-holder .check span,
+.files .file .path-holder .check span {
+  font-size: 14px;
+  color: var(--green);
+}
+.folders .folder .path-holder span.path,
+.files .folder .path-holder span.path,
+.folders .file .path-holder span.path,
+.files .file .path-holder span.path {
+  float: left;
+  display: inline-block;
+}
+.folders .folder .folders,
+.files .folder .folders,
+.folders .file .folders,
+.files .file .folders {
+  padding-left: 30px;
+}
+.btn-confirm-folder {
+  float: right;
+  margin: 20px 0;
+}
+.file .path-holder {
+  display: block;
+}
+.file .path {
+  float: left;
+  width: 70%;
+  font-weight: 600;
+}
+.file .progress {
+  width: 25%;
+  float: right;
+  margin-top: 5px;
+}
 #login-page form {
+  margin-top: 100px;
   background: #edfcff;
   padding: 20px;
   box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.5);

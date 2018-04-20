@@ -8,36 +8,38 @@ var SelectFolder = Vue.component('selectFolder',{
   },
   data: function(){
     return {
-      ready: false,
-      folders: [],
+      selectedFolder: "/",
+      saving: false
     };
   },
   created: function() {
-    this.updateFolders();
   },
   methods: {
-    updateFolders: function(folder){
-      if (folder === undefined) {
-        folder = "/";
-      }
-      var folderEndpoint = apiEndPoint+"/folders/list";
-      var options = {
-        url: folderEndpoint,
-        method: 'GET',
-        params: {
-          "folder": folder
-        }
-      };
-      this.$http(options).then(function(response){
-        if (response.status === 200) {
-          if (response.body.folders) {
-              this.ready = true;
-              this.folders = response.body.folders;
-          } else {
-            this.$router.push("/");
+    setSelected: function(path){
+      this.selectedFolder = path;
+    },
+    confirm: function(){
+      if (this.selectedFolder) {
+        this.saving = true;
+        var selectedFolder = this.selectedFolder;
+        var updateFolderEndpoint = apiEndPoint+"/folders";
+        var options = {
+          url: updateFolderEndpoint,
+          method: 'POST',
+          params: {
+            "folder": selectedFolder
           }
-        }
-      });
+        };
+        this.$http(options).then(function(response){
+          this.foldersLoaded = true;
+          this.saving = false;
+          if (response.status === 200) {
+            if (response.body.status === "success") {
+              this.$router.push("/dropbox");
+            }
+          }
+        });
+      }
     }
   }
 });

@@ -1,0 +1,10 @@
+<script type="text/x-template" id="file-template">
+  <div class="file">
+    <a :href="link" class="path-holder clearfix" download target="_blank">
+      <span class="path">{{path}}</span>
+      <span class="progress">
+        <div class="progress-bar" role="progressbar" :style="'width: '+progress+'%'" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100"></div>
+      </span>
+    </a>
+  </div>
+</script>

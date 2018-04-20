@@ -20,9 +20,9 @@ After cloning, you must install all the dependencies with composer install and n
 
 The clientSecret and clientId should be configured at api/config.json, the system fills the rest of the configurations automatically when needed.
 
-There is no database, so the software uses the api/config.json file to store the users variable.
+There is no database, so the software uses the api/config.json file to store the user's variable.
 
-If you need to edit something on the frontend layer, which is all inside the /app folder, you must run "grunt watch", so it watches the files and compiles it automatically to the distribution form which is referenced in index.php.
+If you need to edit something on the frontend layer, which is all inside the /app folder, you must run "grunt watch", so it watches the files and compiles them automatically to the distribution form which is referenced in index.php.
 
 Before starting to test, you need to run the cli/daemon.php in a terminal, so it can watch the selected folder.
 

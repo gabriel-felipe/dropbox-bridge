@@ -5,7 +5,7 @@ use Kunnu\Dropbox\DropboxApp;
 use EntermotionTrial\Helpers\Registry;
 class Folder
 {
-    public function list()
+    public function folderList()
     {
         $dropbox = Registry::get("dropbox");
 

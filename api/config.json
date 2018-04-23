@@ -1,9 +1,9 @@
 {
     "clientId": "to8ow50np23bfvw",
     "clientSecret": "klza85ycpoc4ee7",
-    "token": "c6mA4owU85wAAAAAAAACbbfdFYZfNgV7GgPXmJ8mG4Cdl4MiNTQDmZqAkqZgTFd6",
-    "folder": "\/Integration test",
-    "syncDir": "\/home\/gabrielfelipe\/www\/dropbox-integration\/synced",
-    "newFileCallbackUrl": "http:\/\/localhost\/test-post.php",
-    "urlBase": "http:\/\/localhost\/dropbox-integration\/api\/..\/"
+    "token": "",
+    "folder": "",
+    "syncDir": "",
+    "newFileCallbackUrl": "",
+    "urlBase": ""
 }

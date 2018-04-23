@@ -6,7 +6,7 @@
     "get": {"controller":"auth","action":"currentAccount"}
   },
   "folders/list" : {
-    "get": {"controller":"folder","action":"list"}
+    "get": {"controller":"folder","action":"folderList"}
   },
   "folders" : {
     "post": {"controller":"folder","action":"update"}

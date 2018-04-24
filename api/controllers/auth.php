@@ -1,8 +1,8 @@
 <?php
-namespace EntermotionTrial\Controllers;
+namespace DropboxBridge\Controllers;
 use Kunnu\Dropbox\Dropbox;
 use Kunnu\Dropbox\DropboxApp;
-use EntermotionTrial\Helpers\Registry;
+use DropboxBridge\Helpers\Registry;
 class Auth
 {
 

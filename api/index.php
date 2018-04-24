@@ -7,8 +7,8 @@ require_once("autoload.php");
 
 use Kunnu\Dropbox\Dropbox;
 use Kunnu\Dropbox\DropboxApp;
-use EntermotionTrial\Helpers\Config;
-use EntermotionTrial\Helpers\Registry;
+use DropboxBridge\Helpers\Config;
+use DropboxBridge\Helpers\Registry;
 $config = new Config("config.json");
 Registry::set("config",$config);
 
@@ -32,9 +32,9 @@ $dropbox = new Dropbox($app);
 Registry::set("dropbox",$dropbox);
 
 
-$router = new EntermotionTrial\Helpers\Router("routes.json");
+$router = new DropboxBridge\Helpers\Router("routes.json");
 $action = $router->getAction($_GET['url']);
 if (!$action) {
-    $action = new EntermotionTrial\Helpers\Action("error","notFound");
+    $action = new DropboxBridge\Helpers\Action("error","notFound");
 }
 echo $action->exec();

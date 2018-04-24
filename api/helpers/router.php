@@ -1,5 +1,5 @@
 <?php
-namespace EntermotionTrial\Helpers;
+namespace DropboxBridge\Helpers;
 
 class Router
 {

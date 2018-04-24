@@ -5,7 +5,7 @@ require_once("../api/autoload.php");
 
 use Kunnu\Dropbox\Dropbox;
 use Kunnu\Dropbox\DropboxApp;
-use EntermotionTrial\Helpers\Config;
+use DropboxBridge\Helpers\Config;
 
 $globalParams = array();
 foreach ($argv as $arg) {

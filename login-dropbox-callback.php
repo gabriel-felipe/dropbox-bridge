@@ -3,7 +3,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set("display_errors",true);
 
-use EntermotionTrial\Helpers\Config;
+use DropboxBridge\Helpers\Config;
 use Kunnu\Dropbox\Dropbox;
 use Kunnu\Dropbox\DropboxApp;
 

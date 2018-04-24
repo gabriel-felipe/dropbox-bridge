@@ -1,5 +1,5 @@
 <?php
-namespace EntermotionTrial\Controllers;
+namespace DropboxBridge\Controllers;
 
 class error
 {

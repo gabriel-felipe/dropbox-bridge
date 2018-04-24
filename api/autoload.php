@@ -2,7 +2,7 @@
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
-    $prefix = 'EntermotionTrial\\';
+    $prefix = 'DropboxBridge\\';
 
     // base directory for the namespace prefix
 

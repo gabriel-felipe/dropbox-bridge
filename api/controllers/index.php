@@ -1,5 +1,5 @@
 <?php
-namespace EntermotionTrial\Controllers;
+namespace DropboxBridge\Controllers;
 use Kunnu\Dropbox\Dropbox;
 use Kunnu\Dropbox\DropboxApp;
 

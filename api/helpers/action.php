@@ -1,12 +1,12 @@
 <?php
-namespace EntermotionTrial\Helpers;
+namespace DropboxBridge\Helpers;
 
 class Action
 {
     protected $controller,$action;
     function __construct($controller,$action)
     {
-        $controllerClass = "\\EntermotionTrial\\Controllers\\".ucfirst($controller);
+        $controllerClass = "\\DropboxBridge\\Controllers\\".ucfirst($controller);
 
         if (class_exists($controllerClass )) {
             $this->controller = new $controllerClass;
